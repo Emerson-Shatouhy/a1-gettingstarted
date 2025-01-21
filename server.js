@@ -1,24 +1,35 @@
-const http = require('http'),
-      fs   = require('fs'),
-      port = 3000;
+const { send } = require('process');
 
-const server = http.createServer( function( request,response ) {
-  switch( request.url ) {
+const http = require('http'),
+  fs = require('fs'),
+  port = 3000;
+
+const server = http.createServer(function (request, response) {
+  switch (request.url) {
     case '/':
-      sendFile( response, 'index.html' );
+      sendFile(response, 'index.html');
       break;
     case '/index.html':
-      sendFile( response, 'index.html' );
+      sendFile(response, 'index.html');
+      break;
+    case '/styles.css':
+      sendFile(response, 'styles.css');
+      break;
+    case '/hobby.html':
+      sendFile(response, 'hobby.html');
+      break;
+    case '/photo.webp':
+      sendFile(response, 'photo.webp');
       break;
     default:
-      response.end( '404 Error: File Not Found' );
+      response.end('404 Error: File Not Found');
   }
 });
 
-server.listen( process.env.PORT || port );
+server.listen(process.env.PORT || port);
 
-const sendFile = function( response, filename ) {
-   fs.readFile( filename, function( err, content ) {
-     response.end( content, 'utf-8' );
-   });
+const sendFile = function (response, filename) {
+  fs.readFile(filename, function (err, content) {
+    response.end(content, 'utf-8');
+  });
 }

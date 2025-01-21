@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <title>CS4241 Assignment 1</title>
+    <meta charset="utf-8">
+</head>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hobby.html">My Hobby</a></li>
+        <li><a href="https://www.wpi.edu">WPI</a></li>
+        <li><a href="https://www.usrowing.org">UsRowing</a></li>
+    </ul>
+</nav>
+
+
+<body>
+    <h1>Hobby</h1>
+    <section>
+        <h2>Rowing</h2>
+        <p>I have rowed for about 10 years now.</p>
+    </section>
+    <img src="./photo.webp" alt="rowing" width="250" height="250">
+
+    <h2>
+        Do you think rowing is cool?
+    </h2>
+    <form>
+        <label for="hobby">Name</label>
+        <input type="text" id="hobby" name="hobby">
+        <br>
+        <label for="coolness">How cool is it?</label>
+        <br>
+        <input type="radio" id="kinda" name="coolness" value="HTML">
+        <label for="kinda">Kinda</label><br>
+        <input type="radio" id="really" name="coolness" value="CSS">
+        <label for="really">Really</label><br>
+        <input type="radio" id="very" name="coolness" value="JavaScript">
+        <label for="very">Very</label>
+        <br>
+        <label for="description">Describe it</label>
+        <br>
+        <textarea id="description" name="description">
+        </textarea>
+        <br>
+        <label for="dropdown">How many hours do you do this hobby?</label>
+        <select id="dropdown" name="dropdown">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+
+            <br>
+        </select>
+        <br>
+        <label for="checkbox">Do you like it?</label>
+        <br>
+        <input type="checkbox" id="yes" name="yes" value="yes">
+        <label for="yes">Yes</label><br>
+        <input type="checkbox" id="no" name="no" value="no">
+        <label for="no">No</label><br>
+        <input type="checkbox" id="maybe" name="maybe" value="maybe">
+        <label for="maybe">Maybe</label>
+        <br>
+
+        <button disabled>Submit</button>
+
+
+    </form>
+
+</body>
+<script>
+    const img = document.querySelector('img');
+    let rotation = 0;
+
+    function spin() {
+        rotation += 1;
+        img.style.transform = 'rotate(' + rotation + 'deg)';
+        requestAnimationFrame(spin);
+    }
+    spin();
+</script>
+
+<footer>
+    <p>This is a footer.</p>
+</footer>
+
+</html>
